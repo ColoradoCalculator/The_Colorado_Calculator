@@ -14,13 +14,13 @@ var equals = document.getElementById("equals");
 
 // NUMBER BUTTONS
 function enterNumberFunction (event) {
-    if (isOperatorBtn(event.target)) {
+    if (isOperatorBtn(event.target) && first.value.length > 0) {
         operator.value = event.target.innerText;
 
-    } else if (operator.value.length > 0) {
+    } else if (operator.value.length > 0 && (isOperatorBtn(event.target) == false)) {
         someOtherStuff += event.target.innerText;
         secondField.value = someOtherStuff;
-    }else{
+    }else if ((isOperatorBtn(event.target)==false)){
         someStuff += event.target.innerText;
         first.value = someStuff;
 

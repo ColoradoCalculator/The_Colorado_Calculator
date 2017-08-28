@@ -31,6 +31,7 @@ h1 {
 }
 
 body {
+    margin-left: 0;
     background-image: url("colorado-winter-wallpaper-mobile.jpg");
     background-size: 160%;
     background-repeat: no-repeat;
@@ -54,8 +55,9 @@ button:hover {
 
 
 textarea {
+    box-sizing: border-box;
     border-radius: 5px;
-    height: 40px;
+    height: 50px;
     resize: none;
     font-size: 30px;
     position: relative;
@@ -64,7 +66,8 @@ textarea {
     background-color: #BF0B32;
     color: white;
     font-weight: 600;
-    opacity: .9
+    opacity: .9;
+    width: 10%;
 }
 
 .numbers {
@@ -94,7 +97,8 @@ textarea {
     padding: 25px;
     padding-top: 33px;
     margin: 0 auto;
-    width: 500px;
+    width: 60%;
+    min-width: 443px;
     border-radius: 15px;
     background-color: lightgrey;
     box-shadow: 15px 20px 30px #f1f1f1;
@@ -112,7 +116,7 @@ textarea {
 #inner-calc {
     border: 5px solid white;
     border-radius: 6px;
-    max-width: 680px;
+    min-width: 384px;
     margin: 0 auto;
     padding: 40px 0 ;
     text-align: center;
@@ -153,14 +157,16 @@ textarea {
 ------------------------------*/
 
 #first_and_result {
+    width: 44%;
     margin-left: 0px;
-    margin-right: 5px;
+    margin-right: auto;
     text-align: center;
 
 }
 
 #second_number {
+    width: 44%;
     margin-right: 0px;
-    margin-left: 5px;
+    margin-left: auto;
     text-align: center;
 }
