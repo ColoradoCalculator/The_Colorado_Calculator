@@ -19,31 +19,52 @@
 
 ------------------------------*/
 
+header {
+    font-family: 'Bungee Inline', cursive;
+    color: white;
+    font-size: x-large;
+    text-shadow: 7px 5px 9px lightgrey;
+}
+
+h1 {
+    margin: 0px;
+}
+
+body {
+    background-image: url("colorado-winter-wallpaper-mobile.jpg");
+    background-size: 160%;
+    background-repeat: no-repeat;
+}
 
 button {
     padding: 5px;
     margin: 10px;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 5px;
     border: transparent;
     box-shadow: 5px 5px 5px gray;
+    font-size: larger;
+    opacity: .6;
+}
+
+button:hover {
+    opacity: 1;
 }
 
 
 textarea {
-    margin: 3px;
-    margin-bottom: 10px;
     border-radius: 5px;
-    height: 30px;
+    height: 40px;
     resize: none;
-    font-size: 20px;
+    font-size: 30px;
     position: relative;
-    top: 2px;
-    border: 2px solid white;
+    bottom: 8px;
+    border: 5px solid white;
     background-color: #BF0B32;
     color: white;
     font-weight: 600;
+    opacity: .9
 }
 
 .numbers {
@@ -65,14 +86,17 @@ textarea {
 ------------------------------*/
 
 #calculator {
-    border: 1px solid black;
-    max-width: 500px;
+    border: transparent;
+    padding: 25px;
+    padding-top: 33px;
     margin: 0 auto;
-    padding: 15px;
-    width: fit-content;
-    border-radius: 20px;
+    width: 500px;
+    border-radius: 15px;
     background-color: lightgrey;
-    box-shadow: 13px 8px 15px gray;
+    box-shadow: 15px 20px 30px #f1f1f1;
+    opacity: .9;
+    position: relative;
+    top: 25px;
 }
 
 /*-----------------------------
@@ -82,9 +106,9 @@ textarea {
 ------------------------------*/
 
 #inner-calc {
-    border: 1px solid black;
-    border-radius: 4px;
-    max-width: 450px;
+    border: 5px solid white;
+    border-radius: 6px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 40px 0 ;
     text-align: center;
@@ -93,6 +117,44 @@ textarea {
 
 /*-----------------------------
 
-* BUTTONS
+* EQUALS
 
 ------------------------------*/
+
+#equals {
+    width: 275px;
+    font-size: 40px;
+    vertical-align: middle;
+    height: 75px;
+    color: white;
+}
+
+/*-----------------------------
+
+* CLEAR
+
+------------------------------*/
+
+#clear {
+    color: white;
+    font-weight: 700;
+}
+
+/*-----------------------------
+
+*
+*   TEXT INPUTS ON SIDE
+*
+
+------------------------------*/
+
+#first_and_result {
+    margin-left: 0px;
+    margin-right: 5px;
+
+}
+
+#second_number {
+    margin-right: 0px;
+    margin-left: 5px;
+}
