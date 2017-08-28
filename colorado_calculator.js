@@ -10,21 +10,21 @@ console.log(numbersArray[0].innerHTML);
 // numbersArray.unshift(zero);
 // console.log(numbersArray);
 var first = document.getElementById("first_and_result");
-function enterNumberFunction (i) {
+
+function enterNumberFunction () {
     first.innerText += numbersArray[i].innerText
     // return function() {
     //     first.innerText += numbersArray[i].innerText;
     // }
 }
 
+for (var number = 0; number < numbersArray.length; number++) {
+    numbersArray[number].addEventListener("click", enterNumberFunction, false)
+
+};
 
 
 
-    numbersArray.addEventListener("click", enterNumberFunction() );
 
 // first.innerText += numberToEnter;
-
-
-
-
 // numbersArray.addEventListener("click", enterNumberFunction, false);
