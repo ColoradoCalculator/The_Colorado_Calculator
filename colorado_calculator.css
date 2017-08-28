@@ -79,6 +79,10 @@ textarea {
     font-weight: 600;
 }
 
+#operator {
+    text-align: center;
+}
+
 /*-----------------------------
 
 * OUTSIDE CONTAINER
@@ -151,10 +155,12 @@ textarea {
 #first_and_result {
     margin-left: 0px;
     margin-right: 5px;
+    text-align: center;
 
 }
 
 #second_number {
     margin-right: 0px;
     margin-left: 5px;
+    text-align: center;
 }
