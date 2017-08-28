@@ -1,0 +1,98 @@
+/*-----------------------------
+
+* COLORS
+
+------------------------------*/
+
+/*
+    blue: #165ac1
+*   yellow: #FFD701
+    red: #BF0B32
+*   white: #FFFFFF
+
+*/
+
+
+/*-----------------------------
+
+* BASE
+
+------------------------------*/
+
+
+button {
+    padding: 5px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: transparent;
+    box-shadow: 5px 5px 5px gray;
+}
+
+
+textarea {
+    margin: 3px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 30px;
+    resize: none;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    border: 2px solid white;
+    background-color: #BF0B32;
+    color: white;
+    font-weight: 600;
+}
+
+.numbers {
+    background-color: #165ac1;
+    color: white;
+    font-weight: 600;
+}
+
+.operators {
+    background-color: #FFD701;
+    color: white;
+    font-weight: 600;
+}
+
+/*-----------------------------
+
+* OUTSIDE CONTAINER
+
+------------------------------*/
+
+#calculator {
+    border: 1px solid black;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: lightgrey;
+    box-shadow: 13px 8px 15px gray;
+}
+
+/*-----------------------------
+
+* INSIDE CONTAINER
+
+------------------------------*/
+
+#inner-calc {
+    border: 1px solid black;
+    border-radius: 4px;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px 0 ;
+    text-align: center;
+    background-color: white;
+}
+
+/*-----------------------------
+
+* BUTTONS
+
+------------------------------*/
