@@ -1,51 +1,112 @@
 "use strict";
 
-var numbersArray = document.getElementsByClassName("numbers");
+var buttonsArray = document.getElementsByClassName("buttons");
 
 // VARIABLES
 var first = document.getElementById("first_and_result");
 var operator = document.getElementById("operator");
-
+var secondField = document.getElementById("second_number");
 var someStuff = "";
+var someOtherStuff = "";
 var clear = document.getElementById("clear");
 var operators = document.getElementsByClassName("operators");
-
+var equals = document.getElementById("equals");
 
 // NUMBER BUTTONS
-function enterNumberFunction (i) {
+function enterNumberFunction (event) {
+    if (isOperatorBtn(event.target)) {
+        operator.value = event.target.innerText;
 
-    return function() {
-    someStuff += numbersArray[i].innerText;
-    first.innerText = someStuff;
+    } else if (operator.value.length > 0) {
+        someOtherStuff += event.target.innerText;
+        secondField.value = someOtherStuff;
+    }else{
+        someStuff += event.target.innerText;
+        first.value = someStuff;
+
     }
-
 }
 
-for(var i=0; i< numbersArray.length; i++) {
-    numbersArray[i].addEventListener("click", enterNumberFunction(i));
-}
+for (var i = 0; i < buttonsArray.length; i++) {
+            buttonsArray[i].addEventListener("click", enterNumberFunction);
+        }
+
 
 
 // CLEAR BUTTON
 function clearFunction() {
-    first.innerText = "";
+    first.value = "";
     someStuff = "";
+    operator.value = "";
+    secondField.value = "";
+    someOtherStuff = "";
 }
 clear.addEventListener("click", clearFunction);
 
-// OPERATOR BUTTONS
 
-function enterOperatorFunction (i) {
+function equalsFunction(){
+    if(first.value.indexOf(".")==first.value.lastIndexOf(".") && secondField.value.indexOf(".")==secondField.value.lastIndexOf(".")) {
+        var firstOperand = parseFloat(first.value);
+        var secondOperand = parseFloat(secondField.value);
+        switch (operator.value) {
+            case "+":
+                first.value = firstOperand + secondOperand;
 
-    return function () {
-        operator.innerText = operators[i].innerText;
+                break;
+            case "-":
+                first.value = firstOperand - secondOperand;
+
+                break;
+            case "*":
+                first.value = firstOperand * secondOperand;
+
+                break;
+            case "/":
+                if (secondOperand == 0) {
+                    alert("cannot divide by zero!");
+                    break;
+                }
+                first.value = firstOperand / secondOperand;
+
+                break;
+        }
+
+        secondField.value = "";
+        someOtherStuff = "";
+    }else{
+        alert("Too many '.' characters!")
     }
 
-};
-
-for(var i=0; i< operators.length; i++) {
-    operators[i].addEventListener("click", enterOperatorFunction(i));
 }
 
-// first.innerText += numberToEnter;
-// numbersArray.addEventListener("click", enterNumberFunction, false);
+equals.addEventListener("click", equalsFunction);
+
+// OPERATOR BUTTONS
+
+
+// function enterOperatorFunction (i) {
+//
+//     return function () {
+//         operatorFunctionVariable = operator.innerText;
+//         operatorFunctionVariable += operators[i].innerText;
+//         operator.innerText = operatorFunctionVariable;
+//
+//     }
+//
+//
+// }
+//
+// for(i=0; i< operators.length; i++) {
+//     operators[i].addEventListener("click", enterOperatorFunction(i), false);
+// }
+function isOperatorBtn (buttonToTest) {
+    return (buttonToTest.className.split(" ").indexOf("operators") > -1 ? true : false);
+}
+
+// for(var i=0; i< operators.length; i++) {
+//     (function(index) {
+//         operators[index].addEventListener("click", function() {
+//             haveIEnteredSomething = true;
+//         })
+//     })(i);
+// }
