@@ -53,6 +53,10 @@ button:hover {
     opacity: 1;
 }
 
+button:focus {
+    outline: none;
+}
+
 
 textarea {
     box-sizing: border-box;
