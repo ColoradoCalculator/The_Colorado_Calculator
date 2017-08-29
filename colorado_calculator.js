@@ -12,12 +12,12 @@ var clear = document.getElementById("clear");
 var operators = document.getElementsByClassName("operators");
 var equals = document.getElementById("equals");
 
-// NUMBER BUTTONS
+// NUMBER & OPERATOR BUTTONS
 function enterNumberFunction (event) {
     if (isOperatorBtn(event.target) && first.value.length > 0) {
         operator.value = event.target.innerText;
 
-    } else if (operator.value.length > 0 && (isOperatorBtn(event.target) == false)) {
+    } else if (operator.value.length > 0 && (isOperatorBtn(event.target) == false) && operator.value != "√") {
         someOtherStuff += event.target.innerText;
         secondField.value = someOtherStuff;
     }else if ((isOperatorBtn(event.target)==false)){
@@ -43,12 +43,15 @@ function clearFunction() {
 }
 clear.addEventListener("click", clearFunction);
 
-
+// EQUALS BUTTON
 function equalsFunction(){
     if(first.value.indexOf(".")==first.value.lastIndexOf(".") && secondField.value.indexOf(".")==secondField.value.lastIndexOf(".")) {
         var firstOperand = parseFloat(first.value);
         var secondOperand = parseFloat(secondField.value);
         switch (operator.value) {
+            case "√":
+                first.value = Math.sqrt(first.value);
+                break;
             case "+":
                 first.value = firstOperand + secondOperand;
 
